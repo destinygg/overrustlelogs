@@ -24,3 +24,4 @@ ignorelog.json
 logs/
 overrustlelogs.toml
 
+docker-compose.override.yaml
