@@ -17,7 +17,8 @@ services:
     env_file:
       - .env
     volumes:
-      - ./package/var/overrustlelogs:/logger:ro
+      - ./overrustlelogs.toml:/logger/overrustlelogs.toml:ro
+      - ./channels.json:/logger/channels.json
       - ./logs:/logs
   frontend:
     image: nginx:latest
