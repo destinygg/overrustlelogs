@@ -1,6 +1,6 @@
 version: "3"
 services:
-  server:
+  orl-server:
     build:
       context: .
       dockerfile: server/Dockerfile
@@ -11,7 +11,7 @@ services:
       - .env
     volumes:
       - ./logs:/logs:ro
-  logger:
+  orl-logger:
     build:
       context: .
       dockerfile: logger/Dockerfile
@@ -24,7 +24,7 @@ services:
       - ./overrustlelogs.toml:/logger/overrustlelogs.toml:ro
       - ./channels.json:/logger/channels.json
       - ./logs:/logs
-  frontend:
+  orl-frontend:
     image: nginx:latest
     container_name: orl-web
     restart: unless-stopped
