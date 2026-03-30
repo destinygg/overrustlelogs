@@ -36,10 +36,11 @@ cp ./.env.example ./.env
 # changing paths in this requires to change paths in install.sh
 vim .env
 
-# copy config files to working dir
-cp ./package/var/overrustlelogs/* 
+# copy config files to repo root
+cp ./package/var/overrustlelogs/overrustlelogs.toml .
+cp ./package/var/overrustlelogs/channels.json .
 
-# few things you need to edit here too
+# edit the config
 vim ./overrustlelogs.toml
 
 # set the channels you want to log 
