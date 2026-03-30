@@ -1,7 +1,9 @@
 version: "3"
 services:
   orl-server:
-    build: ./server
+    build:
+      context: .
+      dockerfile: server/Dockerfile
     container_name: orl-server
     user: "${USER_UID}"
     restart: unless-stopped
@@ -10,7 +12,9 @@ services:
     volumes:
       - ./logs:/logs:ro
   orl-logger:
-    build: ./logger
+    build:
+      context: .
+      dockerfile: logger/Dockerfile
     container_name: orl-logger
     user: "${USER_UID}"
     restart: unless-stopped
